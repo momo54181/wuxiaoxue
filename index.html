@@ -1,214 +1,106 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "htt`://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>你好吴晓雪</title>     
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>写给未来的你</title>
     <link type="text/css" rel="stylesheet" href="./css/default.css">
-    <script type="text/javascript" src="./css/jquery.min.js"></script>
-    <script type="text/javascript" src="./css/jscex.min.js"></script>
-    <script type="text/javascript" src="./css/jscex-parser.js"></script>
-    <script type="text/javascript" src="./css/jscex-jit.js"></script>
-    <script type="text/javascript" src="./css/jscex-builderbase.min.js"></script>
-    <script type="text/javascript" src="./css/jscex-async.min.js"></script>
-    <script type="text/javascript" src="./css/jscex-async-powerpack.min.js"></script>
-    <script type="text/javascript" src="./css/functions.js" charset="utf-8"></script>
-    <script type="text/javascript" src="./css/love.js" charset="utf-8"></script>
-      <style type="text/css">
-<!--
-.STYLE1 {color: #666666}
--->
-        </style>
-</head>
-    <body>
-      <audio autoplay="autopaly">
-          <source src="music/love.mp3" type="audio/mp3" />
-      </audio>  
-        <div id="main">
-             <div id="wrap">
-                <div id="text">
-              <div id="code">
-            <font color="#FF0000">    
-<span class="say"><h1>我希望有个如你一般的人。</h1></span><br><br>
-<span class="say">我希望有个如你一般的人。</span><br> <br>    
-<span class="say">在这里感谢你一个月来的陪伴，</span><br><br>
-<span class="say">谢谢让我的情感回到正常，</span><br><br>
-<span class="say">让我去面对生活。</span><br><br>
-<span class="say">一切问题的答案都很简单。</span><br><br>
-<span class="say">记住，生活中的每一次经历都是一种成长和学习的机会。即使面对拒绝和失落，也要保持积极的心态，继续前行。世界依旧精彩，生活还将继续。</span><br><br>
-<span class="say"><span class="space"></span> -- 一位喜欢你的人 --</span><br>
-<span class="say"><h1>世界灿烂盛大，欢迎回家!</h1></span><br>
-        </font>
-      </div>
-                </div>
-                <div id="clock-box">
-                    <!-- <span class="STYLE1"></span><font color="#33CC00"></font>
-<span class="STYLE1">已经是……</span> -->
-<span class="STYLE1"></span>
-<font color="#33CC00"></font>
-<span class="STYLE1"></span>
-                  <!-- <div id="clock"></div> -->
-              </div>
-                <canvas id="canvas" width="1100" height="680"></canvas>
-            </div>
-            
-        </div>
-    
-    <script>
-    </script>
-
-    <script>
-    (function(){
-        var canvas = $('#canvas');
-    
-        if (!canvas[0].getContext) {
-            $("#error").show();
-            return false;        }
-
-        var width = canvas.width();
-        var height = canvas.height();        
-        canvas.attr("width", width);
-        canvas.attr("height", height);
-        var opts = {
-            seed: {
-                x: width / 2 - 20,
-                color: "rgb(190, 26, 37)",
-                scale: 2
-            },
-            branch: [
-                [535, 680, 570, 250, 500, 200, 30, 100, [
-                    [540, 500, 455, 417, 340, 400, 13, 100, [
-                        [450, 435, 434, 430, 394, 395, 2, 40]
-                    ]],
-                    [550, 445, 600, 356, 680, 345, 12, 100, [
-                        [578, 400, 648, 409, 661, 426, 3, 80]
-                    ]],
-                    [539, 281, 537, 248, 534, 217, 3, 40],
-                    [546, 397, 413, 247, 328, 244, 9, 80, [
-                        [427, 286, 383, 253, 371, 205, 2, 40],
-                        [498, 345, 435, 315, 395, 330, 4, 60]
-                    ]],
-                    [546, 357, 608, 252, 678, 221, 6, 100, [
-                        [590, 293, 646, 277, 648, 271, 2, 80]
-                    ]]
-                ]] 
-            ],
-            bloom: {
-                num: 700,
-                width: 1080,
-                height: 650,
-            },
-            footer: {
-                width: 1200,
-                height: 5,
-                speed: 10,
+    <style>
+        body {
+            background-color: #fff8f0;
+            font-family: 'Microsoft YaHei', sans-serif;
+            color: #333;
+            overflow: hidden;
+        }
+        #main {
+            width: 80%;
+            margin: 0 auto;
+            padding-top: 60px;
+        }
+        .letter {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 12px;
+            padding: 40px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            line-height: 1.8;
+            font-size: 18px;
+        }
+        h1 {
+            color: #d86464;
+            text-align: center;
+        }
+        .signature {
+            margin-top: 40px;
+            text-align: right;
+            font-style: italic;
+            color: #666;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .falling-heart {
+            position: fixed;
+            top: -50px;
+            width: 20px;
+            height: 20px;
+            background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Flat_red_heart_icon.svg/2048px-Flat_red_heart_icon.svg.png');
+            background-size: cover;
+            animation: fall 10s linear infinite;
+            pointer-events: none;
+        }
+        @keyframes fall {
+            to {
+                transform: translateY(110vh) rotate(360deg);
+                opacity: 0;
             }
         }
+        .typewriter p {
+            overflow: hidden;
+            white-space: nowrap;
+            border-right: 3px solid #d86464;
+            animation: typing 4s steps(40, end), blink-caret 0.75s step-end infinite;
+        }
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: #d86464; }
+        }
+    </style>
+</head>
+<body>
+    <div id="main">
+        <div class="letter typewriter">
+            <h1>写给未来那个更自由、更清醒的你</h1>
+            <p>嘿，你好啊。</p>
+            <p>现在的你，还记得曾经那个为了她失眠的晚上吗？那个拼命猜她表情、害怕错过她消息、不敢问出口又不舍得退出的你。</p>
+            <p>那时的你，很努力地爱着一个人，哪怕她忽冷忽热，哪怕她从没真正回答你，你还是把最柔软的真心捧过去，只为她笑一次。</p>
+            <p>可你后来终于明白了：</p>
+            <blockquote>喜欢一个人，不能只靠自己扛着。爱，是两个人都愿意向对方靠近，而不是一个人一直在原地回头望，另一个人却在不断走远。</blockquote>
+            <p>你终于开始为自己走出来了。不是恨她，不是责怪，而是懂了：她不是坏人，只是她还不懂怎么去爱；而你已经开始学会：爱人之前，要先学会爱自己。</p>
+            <p>你学会了在喜欢一个人时，不再失去自己。你不再害怕沉默、不再畏惧被拒绝，你知道：真正的喜欢，不是控制，不是沉默，不是操控情绪——是回应，是理解，是双向的靠近。</p>
+            <p>你不再拿沉默、暧昧、眼神猜测来换取幻想，你也终于不再是那个委屈巴巴却不被珍惜的“工具人”。</p>
+            <p>你是一个愿意成长、有力量、敢爱敢放的人。你从她那里学会的，也许不是爱本身，但却是成长、边界、尊严和自我。</p>
+            <p>谢谢那段感情曾让你动心，也谢谢你自己走得出来。</p>
+            <p>未来的你，一定会遇见一个温柔又坚定的人，她不让你猜、不让你苦、不让你做工具人，她只会拉住你说一句：“我也想一起走。”</p>
+            <p class="signature">—— 你，从回忆中醒来的自己</p>
+        </div>
+    </div>
 
-        var tree = new Tree(canvas[0], width, height, opts);
-        var seed = tree.seed;
-        var foot = tree.footer;
-        var hold = 1;
-
-        canvas.click(function(e) {
-            var offset = canvas.offset(), x, y;
-            x = e.pageX - offset.left;
-            y = e.pageY - offset.top;
-            if (seed.hover(x, y)) {
-                hold = 0; 
-                canvas.unbind("click");
-                canvas.unbind("mousemove");
-                canvas.removeClass('hand');
-            }
-        }).mousemove(function(e){
-            var offset = canvas.offset(), x, y;
-            x = e.pageX - offset.left;
-            y = e.pageY - offset.top;
-            canvas.toggleClass('hand', seed.hover(x, y));
-        });
-
-        var seedAnimate = eval(Jscex.compile("async", function () {
-            seed.draw();
-            while (hold) {
-                $await(Jscex.Async.sleep(10));
-            }
-            while (seed.canScale()) {
-                seed.scale(0.95);
-                $await(Jscex.Async.sleep(10));
-            }
-            while (seed.canMove()) {
-                seed.move(0, 2);
-                foot.draw();
-                $await(Jscex.Async.sleep(10));
-            }
-        }));
-
-        var growAnimate = eval(Jscex.compile("async", function () {
-            do {
-              tree.grow();
-                $await(Jscex.Async.sleep(10));
-            } while (tree.canGrow());
-        }));
-
-        var flowAnimate = eval(Jscex.compile("async", function () {
-            do {
-              tree.flower(2);
-                $await(Jscex.Async.sleep(10));
-            } while (tree.canFlower());
-        }));
-
-        var moveAnimate = eval(Jscex.compile("async", function () {
-            tree.snapshot("p1", 240, 0, 610, 680);
-            while (tree.move("p1", 500, 0)) {
-                foot.draw();
-                $await(Jscex.Async.sleep(10));
-            }
-            foot.draw();
-            tree.snapshot("p2", 500, 0, 610, 680);
-
-            // 会有闪烁不得意这样做, (＞﹏＜)
-            canvas.parent().css("background", "url(" + tree.toDataURL('image/png') + ")");
-            canvas.css("background", "#ffe");
-            $await(Jscex.Async.sleep(300));
-            canvas.css("background", "none");
-        }));
-
-        var jumpAnimate = eval(Jscex.compile("async", function () {
-            var ctx = tree.ctx;
-            while (true) {
-                tree.ctx.clearRect(0, 0, width, height);
-                tree.jump();
-                foot.draw();
-                $await(Jscex.Async.sleep(25));
-            }
-        }));
-
-        var textAnimate = eval(Jscex.compile("async", function () {
-        var together = new Date();
-        together.setFullYear(2009,10,23 );      //时间年月日
-        together.setHours(16);            //小时  
-        together.setMinutes(53);          //分钟
-        together.setSeconds(0);         //秒前一位
-        together.setMilliseconds(2);        //秒第二位
-
-        $("#code").show().typewriter();
-            $("#clock-box").fadeIn(500);
-            while (true) {
-                timeElapse(together);
-                $await(Jscex.Async.sleep(1000));
-            }
-        }));
-
-        var runAsync = eval(Jscex.compile("async", function () {
-            $await(seedAnimate());
-            $await(growAnimate());
-            $await(flowAnimate());
-            $await(moveAnimate());
-
-            textAnimate().start();
-
-            $await(jumpAnimate());
-        }));
-
-        runAsync().start();
-    })();
+    <script>
+        // 生成下落的心形图案
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.className = 'falling-heart';
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.animationDuration = (6 + Math.random() * 4) + 's';
+            heart.style.opacity = Math.random();
+            document.body.appendChild(heart);
+            setTimeout(() => heart.remove(), 10000);
+        }
+        setInterval(createHeart, 300);
     </script>
-
-    </body></html>
+</body>
+</html>
